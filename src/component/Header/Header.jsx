@@ -19,16 +19,20 @@ const Header = () => {
                   <li className='text-black mx-4'><NavLink to='/blog'>Blog</NavLink></li>
                 </ul>
               </div>
-              <Link to='/' className="font-bold uppercase text-white text-xl">DPI quiz contest</Link>
+              <Link to='/' className="font-bold uppercase text-white text-xl">BD Information Technology</Link>
             </div>
 
             <div className="navbar-end">
               <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                   <li className='text-white mx-4'><NavLink to='/'>Home</NavLink></li>
-                  <li className='text-white mx-4'><NavLink to='/topics' >Topics</NavLink></li>
-                  <li className='text-white mx-4'><NavLink to='/statistics' >Statistics</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/topics' >Our Courses</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/statistics' >FAQ</NavLink></li>
                   <li className='text-white mx-4'><NavLink to='/blog'>Blog</NavLink></li>
+                  <button className='text-white'>log Out</button>
+
+                  <li className='text-white mx-4'><NavLink to='/login'>Login</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/register'>Register</NavLink></li>
                 </ul>
               </div>
             </div>

@@ -6,6 +6,8 @@ import ErrorElement from './component/ErrorElement/ErrorElement';
 import Home from './component/Home/Home';
 
 import Main from './component/Layout/Main';
+import Login from './component/Pages/Login/Login';
+import Register from './component/Pages/Register/Register';
 
 
 
@@ -21,10 +23,17 @@ function App() {
           path : '/',
           element : <Home />
         },
-
         {
           path : '/blog',
           element : <Blog />
+        },
+        {
+          path : '/login',
+          element : <Login />
+        },
+        {
+          path : '/register',
+          element : <Register />
         },
       ]
     },
