@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../ContextProvider/ContextProvider';
 
 const Register = () => {
+
+  const {createUser, updateProfileName} = useContext(AuthContext)
+
+
+
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -11,7 +17,30 @@ const Register = () => {
     const password = form.password.value;
     console.log(email, password,name,photoURL)
 
+    createUser(email,password)
+    .then((result) => {
+      const user = result.user;
+      handleUpdateNameProfile(name, photoURL)
+      console.log(user)
+      form.reset();
+      alert('Registion SuccesFull')
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 
+  }
+
+  const handleUpdateNameProfile = (name, photoURL) => {
+    const profile = {
+      displayName : name,
+      photoURL : photoURL
+    }
+    updateProfileName(profile)
+    .then(() => {})
+    .catch((error) => {
+      console.log(error)
+    })
   }
 
 

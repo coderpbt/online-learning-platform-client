@@ -1,8 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from '../../../ContextProvider/ContextProvider';
 
 const Login = () => {
+
+  const {signInwithG,sigIn,signInwithGithub} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+
+  const handleGoogleSub = () => {
+    signInwithG()
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  }
+
+  const handleGithub = () => {
+    signInwithGithub()
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  }
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -11,6 +39,18 @@ const Login = () => {
     const password = form.password.value;
 
     console.log(email,password)
+
+    sigIn(email, password)
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+      form.reset()
+      navigate('/home');
+     
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 
   }
 
@@ -44,10 +84,10 @@ const Login = () => {
 
               <div className='flex'>
                 <div className="form-control mr-1 mt-6">
-                  <button className="btn btn-primary capitalize text-[12px]"><FaGoogle className='mr-1' /> Login With Google</button>
+                  <button onClick={handleGoogleSub} className="btn btn-primary capitalize text-[12px]"><FaGoogle className='mr-1' /> Login With Google</button>
                 </div>
                 <div className="form-control ml-1 mt-6">
-                  <button className="btn btn-primary capitalize text-[12px]"><FaGithub className='mr-1' /> Login With Github</button>
+                  <button onClick={handleGithub} className="btn btn-primary capitalize text-[12px]"><FaGithub className='mr-1' /> Login With Github</button>
                 </div>
               </div>
             </form>

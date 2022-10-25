@@ -20,3 +20,6 @@ code {
   overflow: hidden;
 }
 
+.profile-img{
+  width: 30px !important;
+}

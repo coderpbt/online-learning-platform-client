@@ -2,12 +2,17 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './component/Blog/Blog';
+import Course from './component/Course/Course';
+import RightSide from './component/Course/RightSide';
+import CourseDetails from './component/CourseDetails/CourseDetails';
 import ErrorElement from './component/ErrorElement/ErrorElement';
 import Home from './component/Home/Home';
 
 import Main from './component/Layout/Main';
+import CheckOut from './component/Pages/CheckOut/CheckOut';
 import Login from './component/Pages/Login/Login';
 import Register from './component/Pages/Register/Register';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -20,13 +25,28 @@ function App() {
       errorElement : <ErrorElement />,
       children : [
         {
-          path : '/',
+          path : '/home',
           element : <Home />
         },
         {
           path : '/blog',
           element : <Blog />
         },
+        {
+          path : '/courses',
+          loader : () => fetch(`http://localhost:5000/courses`),
+          element : <Course />
+        },
+        {
+          path : '/catagory/:id',
+          loader : ({params}) => fetch(`http://localhost:5000/categorisid/${params.id}`),
+          element : <Course />
+        },
+        {
+          path : '/courses/:id',
+          loader : ({params}) => fetch(`http://localhost:5000/courses/${params.id}`),
+          element : <CourseDetails />
+         },
         {
           path : '/login',
           element : <Login />
@@ -35,6 +55,16 @@ function App() {
           path : '/register',
           element : <Register />
         },
+        {
+          path : '/rightside',
+          element : <RightSide />,
+        },
+        {
+          path : '/checkout',
+          element : <PrivateRoute><CheckOut /></PrivateRoute>,
+        },
+        
+  
       ]
     },
   ]);

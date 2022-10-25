@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../ContextProvider/ContextProvider';
+import { BsFillBrightnessHighFill, BsFillMoonFill } from "react-icons/bs";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext)
+  const [darkToggle, setDarkToggle] = useState(false);
+
   return (
     <>
+
       <div className='bg-[#1C2B35]'>
         <div className='w-[1200px] mx-auto'>
           <div className="navbar">
@@ -24,15 +30,38 @@ const Header = () => {
 
             <div className="navbar-end">
               <div className="navbar-center hidden lg:flex">
+
                 <ul className="menu menu-horizontal p-0">
-                  <li className='text-white mx-4'><NavLink to='/'>Home</NavLink></li>
-                  <li className='text-white mx-4'><NavLink to='/topics' >Our Courses</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/home'>Home</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/courses' >Our Courses</NavLink></li>
                   <li className='text-white mx-4'><NavLink to='/statistics' >FAQ</NavLink></li>
                   <li className='text-white mx-4'><NavLink to='/blog'>Blog</NavLink></li>
-                  <button className='text-white'>log Out</button>
+                  {
+                    user?.uid ?
+                      <>
+                        <li>
+                          <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                            <label tabIndex={0} className="avatar">
+                              <div className="rounded-full">
+                                {user?.photoURL && <img className='profile-img' src={user?.photoURL} alt='' />}
+                              </div>
+                            </label>
+                          </div>
+                        </li>
+                        <button onClick={logOut} className='text-white'>log Out</button>
+                      </>
+                      :
+                      <>
+                        <li className='text-white mx-4'><NavLink to='/login'>Login</NavLink></li>
+                        <li className='text-white mx-4'><NavLink to='/register'>Register</NavLink></li>
+                      </>
+                  }
+                  <li className='text-white mx-4' onClick={() => setDarkToggle(!darkToggle)}><NavLink to='#'>
+                    {
+                      darkToggle ? <BsFillBrightnessHighFill /> : <BsFillMoonFill />
+                    }
+                  </NavLink></li>
 
-                  <li className='text-white mx-4'><NavLink to='/login'>Login</NavLink></li>
-                  <li className='text-white mx-4'><NavLink to='/register'>Register</NavLink></li>
                 </ul>
               </div>
             </div>
