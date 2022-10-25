@@ -7,7 +7,7 @@ const CourseDetails = () => {
   const navigate = useNavigate();
 
   const handleCheckOut = () => {
-    
+
     navigate('/checkout')
   }
 
@@ -22,7 +22,7 @@ const CourseDetails = () => {
           <h2 className="card-title text-base text-white">$ {coursedata.price} </h2>
           <h2 className="card-title text-base text-white"> {coursedata.total_lecture} </h2>
         </div>
-        <p className="text-base text-white">
+        <p className="text-base text-justify text-white">
           {coursedata.details}
         </p>
         <div className="card-actions justify-end">
