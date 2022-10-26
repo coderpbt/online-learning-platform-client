@@ -25,7 +25,8 @@ const Header = () => {
                   <li className='text-black mx-4'><NavLink to='/blog'>Blog</NavLink></li>
                 </ul>
               </div>
-              <Link to='/' className="font-bold uppercase text-white text-xl">BD Information Technology</Link>
+           
+              <Link to='/' className="font-bold capitalize text-white text-xl">Edule</Link>
             </div>
 
             <div className="navbar-end">
