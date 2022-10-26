@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 const SingleCourse = ({item}) => {
   const {image_url,title,price,total_lecture,_id} = item;
-  const getQuizeId = useNavigate();
+  const getcoursesId = useNavigate();
 
   const handlerAddToCart = (_id) => {
-    getQuizeId(`/courses/${_id}`)
+    getcoursesId(`/courses/${_id}`)
   }
   return (
     <div className="card card-compact shadow-xl">
@@ -18,8 +18,8 @@ const SingleCourse = ({item}) => {
       <h2 className="card-title text-base text-white"> {total_lecture} </h2>
       </div>
       <div className="card-actions justify-end">
-        <button onClick={() => handlerAddToCart(_id)} className="btn btn-primary">
-        Courses Details
+          <button onClick={() => handlerAddToCart(_id)} className="btn btn-primary">
+           Courses Details
           <span><i class="fa-solid fa-arrow-right"></i></span>
         </button>
       </div>

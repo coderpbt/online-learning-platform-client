@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile,GithubAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile,GithubAuthProvider } from "firebase/auth";
 import app from '../Firebase/firebase.config';
 
 export const AuthContext = createContext();
@@ -48,12 +48,10 @@ const ContextProvider = ({children}) => {
 
   //update user profile name and picture
   const updateProfileName = profile => {
+    setLoading(true)
     return updateProfile(auth.currentUser, profile)
   }
-  //email varification 
-  const veryficitionUserEmail = () => {
-    return sendEmailVerification(auth.currentUser)
-  }
+
 
   //Current User Stage Change
   useEffect(() =>{
@@ -71,7 +69,7 @@ const ContextProvider = ({children}) => {
 
   },[])
 
-  const authInfo = {user,loading,setLoading,createUser,sigIn,logOut,signInwithG,updateProfileName,veryficitionUserEmail,signInwithGithub}
+  const authInfo = {user,loading,setLoading,createUser,sigIn,logOut,signInwithG,updateProfileName,signInwithGithub}
 
   return (
     <AuthContext.Provider value={authInfo}>

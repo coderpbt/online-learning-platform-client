@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../ContextProvider/ContextProvider';
 
@@ -7,30 +7,10 @@ const Login = () => {
 
   const {signInwithG,sigIn,signInwithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
+  const from = location.state?.from?.pathname || '/'
 
-
-  const handleGoogleSub = () => {
-    signInwithG()
-    .then((result) => {
-      const user = result.user;
-      console.log(user)
-    })
-    .catch((error) => {
-      console.error(error)
-    })
-  }
-
-  const handleGithub = () => {
-    signInwithGithub()
-    .then((result) => {
-      const user = result.user;
-      console.log(user)
-    })
-    .catch((error) => {
-      console.error(error)
-    })
-  }
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -45,13 +25,38 @@ const Login = () => {
       const user = result.user;
       console.log(user)
       form.reset()
-      navigate('/home');
+      navigate(from, {replace: true})
      
     })
     .catch((error) => {
       console.error(error)
     })
 
+  }
+
+
+  const handleGoogleSub = () => {
+    signInwithG()
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+      navigate(from, {replace: true})
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  }
+
+  const handleGithub = () => {
+    signInwithGithub()
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+      navigate(from, {replace: true})
+    })
+    .catch((error) => {
+      console.error(error)
+    })
   }
 
   return (

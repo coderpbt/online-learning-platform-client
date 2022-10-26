@@ -10,6 +10,7 @@ import Home from './component/Home/Home';
 
 import Main from './component/Layout/Main';
 import CheckOut from './component/Pages/CheckOut/CheckOut';
+import Faq from './component/Pages/Faq/Faq';
 import Login from './component/Pages/Login/Login';
 import Register from './component/Pages/Register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -25,12 +26,20 @@ function App() {
       errorElement : <ErrorElement />,
       children : [
         {
+          path : '/',
+          element : <Home />
+        },
+        {
           path : '/home',
           element : <Home />
         },
         {
           path : '/blog',
           element : <Blog />
+        },
+        {
+          path : '/faq',
+          element : <Faq />
         },
         {
           path : '/courses',
@@ -61,6 +70,11 @@ function App() {
         },
         {
           path : '/checkout',
+          element : <PrivateRoute><CheckOut /></PrivateRoute>,
+        },
+        {
+          path : '/checkout/:id',
+          loader : ({params}) => fetch(`http://localhost:5000/courses/${params.id}`),
           element : <PrivateRoute><CheckOut /></PrivateRoute>,
         },
         

@@ -35,7 +35,7 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                   <li className='text-white mx-4'><NavLink to='/home'>Home</NavLink></li>
                   <li className='text-white mx-4'><NavLink to='/courses' >Our Courses</NavLink></li>
-                  <li className='text-white mx-4'><NavLink to='/statistics' >FAQ</NavLink></li>
+                  <li className='text-white mx-4'><NavLink to='/faq' >FAQ</NavLink></li>
                   <li className='text-white mx-4'><NavLink to='/blog'>Blog</NavLink></li>
                   {
                     user?.uid ?
@@ -54,7 +54,6 @@ const Header = () => {
                       :
                       <>
                         <li className='text-white mx-4'><NavLink to='/login'>Login</NavLink></li>
-                        <li className='text-white mx-4'><NavLink to='/register'>Register</NavLink></li>
                       </>
                   }
                   <li className='text-white mx-4' onClick={() => setDarkToggle(!darkToggle)}><NavLink to='#'>

@@ -2,56 +2,26 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="lg:w-[600px] mx-auto w-[95%] my-48">
-      <div className="collapse collapse-arrow">
-        <input type="checkbox" className="peer" />
-        <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-          What is purpose react router?
-        </div>
-        <div className="collapse-content bg-primary text-primary-content   peer-checked:bg-secondary peer-checked:text-secondary-content text-justify">
-          <p>
-            React Router is a standard library for routing in React. It enables
-            the navigation among views of various components in a React
-            Application, allows changing the browser URL, and keeps the UI in
-            sync with the URL.
+    <div className="lg:w-[800px] mx-auto w-[95%] my-20">
+       <div className="my-8 text-left">
+          <h1 className="text-3xl text-white capitalize font-bold mb-2">what is cors?</h1>
+          <p className="text-white text-base">- CORS is a node. js package for providing a Connect/Express middleware that can be used to enable CORS with various options.</p>
+       </div>
+       <div className="my-8 text-left">
+          <h1 className="text-3xl text-white capitalize font-bold mb-2">Why are you using firebase? What other options do you have to implement authentication?</h1>
+          <p className="text-white text-base">- Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.
+          <br />
+          other options :- Auth0, MongoDB, Passport, Okta.
           </p>
-          <p>
-            It keeps track of the location and renders different Routes as it
-            changes, and it also gives you tools to update the location using
-            Links and the history API.
-          </p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow">
-        <input type="checkbox" className="peer" />
-        <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-          How does context api work?
-        </div>
-        <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-          <p>
-            The React Context API is a way for a React app to effectively
-            produce global variables that can be passed around. This is the
-            alternative to "prop drilling" or moving props from grandparent to
-            child to parent, and so on. Context is also touted as an easier,
-            lighter approach to state management using Redux.
-          </p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow">
-        <input type="checkbox" className="peer" />
-        <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-          How does useref work in react?
-        </div>
-        <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-          <p>
-            useRef returns a mutable ref object whose .current property is
-            initialized to the passed argument ( initialValue ). The returned
-            object will persist for the full lifetime of the component.
-            Essentially, useRef is like a “box” that can hold a mutable value in
-            its .current property.
-          </p>
-        </div>
-      </div>
+       </div>
+       <div className="my-8 text-left">
+          <h1 className="text-3xl text-white capitalize font-bold mb-2"> How does the private route work?</h1>
+          <p className="text-white text-base">- The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.</p>
+       </div>
+       <div className="my-8 text-left">
+          <h1 className="text-3xl text-white capitalize font-bold mb-2"> What is Node? How does Node work?</h1>
+          <p className="text-white text-base">-It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive</p>
+       </div>
     </div>
   );
 };
