@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../ContextProvider/ContextProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-
   const {signInwithG,sigIn,signInwithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,10 +26,12 @@ const Login = () => {
       console.log(user)
       form.reset()
       navigate(from, {replace: true})
+      toast.success('Login SuccessFul')
      
     })
     .catch((error) => {
       console.error(error)
+      toast.warning('email And  password donst match')
     })
 
   }

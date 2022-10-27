@@ -20,7 +20,6 @@ const SingleCourse = ({item}) => {
       <div className="card-actions justify-end">
           <button onClick={() => handlerAddToCart(_id)} className="btn btn-primary">
            Courses Details
-          <span><i class="fa-solid fa-arrow-right"></i></span>
         </button>
       </div>
     </div>

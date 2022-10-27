@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const LeftSide = () => {
+ 
+
   const [catagorys, setCatagorys] = useState([])
   useEffect(() => {
     fetch('http://localhost:5000/categoris')

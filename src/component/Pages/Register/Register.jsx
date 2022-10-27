@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../../ContextProvider/ContextProvider';
 
 const Register = () => {
 
   const {createUser, updateProfileName} = useContext(AuthContext)
-  
-
+  const navigate = useNavigate();
 
 
   const handleOnSubmit = (event) => {
@@ -24,10 +24,13 @@ const Register = () => {
       handleUpdateNameProfile(name, photoURL)
       console.log(user)
       form.reset();
-      alert('Registion SuccesFull')
+      toast.success('Registion SuccesFull')
+      navigate('/login')
     })
     .catch((error) => {
       console.error(error)
+      const errorMessage = error.message
+      toast.warning(`${errorMessage}`)
     })
 
   }
