@@ -1,7 +1,11 @@
-# DPI QUIZ CONTEST
-# website live : https://brilliant-selkie-c42349.netlify.app/
+# information technology Edule
+# website live : https://bd-information-technology.web.app
 
-# This is quiz website. i will use react and tailwindcss to make this website.
-# Its a quize website you can test your skill this website.
-# also i will use recchart for graph total quiz.
+# This is Edlue learning course website. 
+# Start your favourite course.
+# Now learning from anywhere, and build your bright career.
+# you can buy a course very easly and we will support any time.
+# Edule is a best learning website you can learning step by step here.
+
+# I will use technology for make this website (React Js, tailwindcss, React Icon, React-pdf)
 

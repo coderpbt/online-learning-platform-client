@@ -50,7 +50,7 @@ const Header = () => {
                 </ul>
               </div>
 
-              <Link to='/' className="font-bold capitalize text-white text-xl">Edule</Link>
+              <Link to='/' className="font-bold capitalize text-white text-xl"> information technology Edule</Link>
             </div>
 
             <div className="navbar-end">
