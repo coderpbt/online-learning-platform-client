@@ -5,6 +5,7 @@ import { AuthContext } from '../../../ContextProvider/ContextProvider';
 const Register = () => {
 
   const {createUser, updateProfileName} = useContext(AuthContext)
+  
 
 
 

@@ -8,8 +8,8 @@ const CheckOut = () => {
   console.log(dtls)
   return (
     <div className='bg-[#1C2B35]'>
-      <div className='w-[1200px] mx-auto'>
-        <div className='py-32 '>
+      <div className='xl:w-[1200px] mx-auto w-[95%]'>
+        <div className='lg:py-32 py-14'>
           <h2 className='text-white text-3xl font-bold mb-5'>Checkout Details</h2>
           <div>
             <h3 className='text-white text-left'> <span className='text-white font-bold my-1'>Customer Name </span>: {user?.displayName}</h3>

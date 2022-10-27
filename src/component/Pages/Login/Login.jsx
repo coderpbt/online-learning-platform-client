@@ -61,7 +61,7 @@ const Login = () => {
 
   return (
     <div className="hero min-h-screen">
-      <div className="hero-content w-[75%] flex-col">
+      <div className="hero-content lg:w-[75%] flex-col w-[90%] ">
         <div className="text-center lg:text-left">
           <h1 className="text-3xl text-white font-bold">Login now!</h1>
         </div>

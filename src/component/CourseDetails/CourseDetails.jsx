@@ -16,7 +16,7 @@ const CourseDetails = () => {
 
   return (
     <div className='bg-[#1C2B35]'>
-      <div className='w-[800px] mx-auto'>
+      <div className='xl:w-[800px] mx-auto w-[95%]'>
         <div className="card card-compact shadow-xl pt-9">
           <div className='flex justify-between items-center'>
             <h2 className="card-title text-lg p-3 text-left text-white">{coursedata.title}</h2>

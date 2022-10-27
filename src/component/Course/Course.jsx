@@ -8,12 +8,12 @@ const Course = () => {
   console.log(catagoryCourses)
   return (
     <div className='bg-[#1C2B35]'>
-      <div className='w-[1200px] mx-auto'>
-        <div className='flex justify-between pt-10'>
-          <div className='lg:w-[20%] w-[30%] pt-2'>
+      <div className='xl:w-[1200px] mx-auto w-[95%]'>
+        <div className='flex flex-wrap justify-between pt-1 lg:pt-10'>
+          <div className='lg:w-[20%] w-[100%] pt-2'>
             <LeftSide />
           </div>
-          <div className='lg:w-[78%] w-[68%]'>
+          <div className='lg:w-[78%] w-[100%]'>
             <div className="flex justify-between flex-wrap">
               <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-2'>
                 {

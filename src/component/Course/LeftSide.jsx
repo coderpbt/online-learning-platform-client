@@ -10,9 +10,9 @@ const LeftSide = () => {
   },[])
 
   return (
-      <div>
+      <div className='flex flex-wrap lg:flex-col'>
         {
-          catagorys.map(catagory => <p className='m-3 text-left' key={catagory.id}>
+          catagorys.map(catagory => <p className='lg:m-3 m-2 text-left' key={catagory.id}>
             <Link className='text-white ' to={`/catagory/${catagory.id}`}>{catagory.name}</Link>
           </p>)
         }

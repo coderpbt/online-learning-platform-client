@@ -70,7 +70,7 @@ function App() {
         },
         {
           path : '/checkout',
-          element : <PrivateRoute><CheckOut /></PrivateRoute>,
+          element : <CheckOut />
         },
         {
           path : '/checkout/:id',
