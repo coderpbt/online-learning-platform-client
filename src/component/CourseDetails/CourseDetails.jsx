@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import { FaFilePdf } from 'react-icons/fa';
+import { FaFilePdf, FaArrowRight } from 'react-icons/fa';
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
@@ -39,7 +39,7 @@ const CourseDetails = () => {
             </p>
             <div className="card-actions justify-end">
               <button onClick={() => handlerAddToCarts(coursedata._id)} className="btn btn-primary">
-                <Link to='/checkout'> Get premium access</Link>
+                <Link className='flex items-center' to='/checkout'> Get premium access <FaArrowRight className='ml-2 pl-1' /></Link>
               </button>
             </div>
           </div>
