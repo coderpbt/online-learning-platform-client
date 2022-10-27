@@ -6,7 +6,7 @@ const LeftSide = () => {
 
   const [catagorys, setCatagorys] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/categoris')
+    fetch('https://b610-lerning-platform-server-side-coderpbt.vercel.app/categoris')
     .then(res => res.json())
     .then(data => setCatagorys(data));
   },[])

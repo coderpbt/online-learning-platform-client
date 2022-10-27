@@ -18,7 +18,6 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email,password)
 
     sigIn(email, password)
     .then((result) => {
@@ -31,7 +30,7 @@ const Login = () => {
     })
     .catch((error) => {
       console.error(error)
-      toast.warning('email And  password donst match')
+      toast.warning(`email address or password doesn't match`)
     })
 
   }
@@ -88,8 +87,8 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-
-              <div className='flex'>
+            </form>
+            <div className='flex'>
                 <div className="form-control mr-1 mt-6">
                   <button onClick={handleGoogleSub} className="btn btn-primary capitalize text-[12px]"><FaGoogle className='mr-1' /> Login With Google</button>
                 </div>
@@ -97,7 +96,6 @@ const Login = () => {
                   <button onClick={handleGithub} className="btn btn-primary capitalize text-[12px]"><FaGithub className='mr-1' /> Login With Github</button>
                 </div>
               </div>
-            </form>
           </div>
         </div>
       </div>

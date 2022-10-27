@@ -43,17 +43,17 @@ function App() {
         },
         {
           path : '/courses',
-          loader : () => fetch(`http://localhost:5000/courses`),
+          loader : () => fetch(`https://b610-lerning-platform-server-side-coderpbt.vercel.app/courses`),
           element : <Course />
         },
         {
           path : '/catagory/:id',
-          loader : ({params}) => fetch(`http://localhost:5000/categorisid/${params.id}`),
+          loader : ({params}) => fetch(`https://b610-lerning-platform-server-side-coderpbt.vercel.app/categorisid/${params.id}`),
           element : <Course />
         },
         {
           path : '/courses/:id',
-          loader : ({params}) => fetch(`http://localhost:5000/courses/${params.id}`),
+          loader : ({params}) => fetch(`https://b610-lerning-platform-server-side-coderpbt.vercel.app/courses/${params.id}`),
           element : <CourseDetails />
          },
         {
@@ -74,7 +74,7 @@ function App() {
         },
         {
           path : '/checkout/:id',
-          loader : ({params}) => fetch(`http://localhost:5000/courses/${params.id}`),
+          loader : ({params}) => fetch(`https://b610-lerning-platform-server-side-coderpbt.vercel.app/courses/${params.id}`),
           element : <PrivateRoute><CheckOut /></PrivateRoute>,
         },
         
